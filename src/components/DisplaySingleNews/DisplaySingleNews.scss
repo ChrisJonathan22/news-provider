@@ -1,0 +1,43 @@
+@import '../variables.scss';
+
+.single_news_container {
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1em;
+
+    .single_news_author {
+        padding-top: 1em;
+        color: $red;
+        font-style: italic;
+        font-weight: 600;
+        font-size: 1.2em;
+        font-family: $primaryFont;
+    }
+
+    .single_news_title {
+        font-size: 2em;
+        font-weight: 400;
+        font-family: $primaryFont;
+        max-width: 80%;
+        padding: 1em 1em;
+        margin: 0 auto;
+    }
+
+    .single_news_time_published {
+        display: block;
+        padding-bottom: 1em;
+        font-family: $primaryFont;
+    }
+
+    .single_news_image {
+        max-width: 80%;
+        padding: 0 1em;
+    }
+
+    .single_news_content {
+        font-family: $primaryFont;
+        max-width: 80%;
+        padding: 1em 1em;
+        margin: 0 auto;
+    }
+}

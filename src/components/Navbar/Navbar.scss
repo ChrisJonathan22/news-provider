@@ -1,0 +1,70 @@
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.navbar {
+    position: fixed;
+    top: 0;
+    background-color: $white;
+    height: 166px;
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px $lightGrey solid;
+    z-index: 1;
+
+    .logo {
+        padding: 1em;
+        max-width: 200px;
+
+    }
+
+    .menu_container {
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline-block;
+                padding: 1em;
+
+                .menu_items {
+                    color: $menuItems;
+                    text-decoration: none;
+                    @include transition(color, .2s);
+                    font-family: $primaryFont;
+                    font-size: 1.3em;
+                    position: relative;
+
+                    &.active {
+                        color: $red;
+                    }
+
+                    &:after {
+                        z-index: -1;
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        left: 15px;
+                        height: 100%;
+                        width: 100%;
+                        transform: skewX(-20deg);
+                        border-right: 1px solid $lightGrey;
+                    }
+
+                    &:last-of-type {
+                        content: none;
+                    }
+
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.clear_nav {
+    height: 166px;
+}

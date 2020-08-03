@@ -1,0 +1,118 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.news_container {
+    @include flexbox;
+    @include flex-wrap(wrap);
+    width: 80%;
+    margin: 0 auto;
+    @include justify-content(space-between);
+
+    .single_news {
+        width: 60%;
+        padding-right: 3em;
+        border-right: 1px $lightGrey solid;
+        overflow: hidden;
+
+        @include respond-above(xs) {
+            width: 100%;
+            padding-right: 0;
+        }
+
+        .author_container {
+            .author {
+                color: $red;
+                font-size: 1.2em;
+                font-style: italic;
+                font-weight: 600;
+                font-family: $primaryFont;
+            }
+        }
+
+        .news_title {
+            h2 {
+                font-size: 2em;
+                font-weight: 400;
+                font-family: $primaryFont;
+            }
+        }
+
+        .news_description {
+            p {
+                color: $fadedText;
+                font-family: $primaryFont;
+            }
+        }
+
+        .news_image_container {
+            img {
+                width: 100%;
+            }
+        }
+
+        .read_moreBtn {
+            text-align: center;
+
+            button {
+                color: $red;
+                background-color: $white;
+                border: 1px $lightGrey solid;
+                border-radius: 8%;
+                outline: none;
+                padding: 0.6em;
+                cursor: pointer;
+                @include transition(all, .2s);
+                font-family: $primaryFont;
+                font-size: 1em;
+
+                &:hover {
+                    background-color: $red;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .all_news {
+        width: 30%;
+        max-height: 700px;
+        overflow-y: scroll;
+
+        @include respond-above(xs) {
+            width: 100%;
+            padding-top: 2em;
+        }
+
+        .news_item {
+            @include transition(all, .2s);
+            cursor: pointer;
+            border-bottom: 1px solid $lightGrey;
+            padding: .5em;
+
+            &_author {
+                color: $red;
+                font-family: $primaryFont;
+                font-style: italic;
+            }
+
+            &_title {
+                font-size: 1em;
+                font-family: $primaryFont;
+            }
+
+            &:hover {
+                background-color: $red;
+                color: $white;
+
+                .news_item_title, .news_item_author {
+                    color: $white;
+                }
+
+                .news_item_author {
+                    text-decoration: underline;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+}
